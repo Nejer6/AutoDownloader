@@ -25,3 +25,19 @@ tasks.jar {
         attributes["Main-Class"] = "com.github.nejer6.autodownloader.MainKt"
     }
 }
+
+tasks.register<Jar>("fatJar") {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    archiveClassifier.set("all")
+
+    from(sourceSets.main.get().output)
+
+    dependsOn(configurations.runtimeClasspath)
+    from({
+        configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) }
+    })
+
+    manifest {
+        attributes["Main-Class"] = "com.github.nejer6.autodownloader.MainKt"
+    }
+}
