@@ -1,8 +1,10 @@
 package com.github.nejer6.autodownloader
 
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 import java.io.File
 
-fun main() {
+fun main() = runBlocking {
     val directory = "/data"
 
     val folderWatcher = FolderWatcher(
@@ -14,5 +16,5 @@ fun main() {
     }
     folderWatcher.startWatching()
     print("Stop?")
-    readln()
+    delay(1000 * 60 * 10)
 }
