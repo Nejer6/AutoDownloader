@@ -3,4 +3,4 @@ services:
     build:
       context: .
     volumes:
-      - ./.gradle:/home/gradle/.gradle
+      - ./data:/data
