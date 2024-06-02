@@ -22,6 +22,6 @@ kotlin {
 
 tasks.jar {
     manifest {
-        attributes["Main-Class"] = "com.github.nejer6.MainKt"
+        attributes["Main-Class"] = "com.github.nejer6.autodownloader.MainKt"
     }
 }
