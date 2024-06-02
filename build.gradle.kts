@@ -19,3 +19,9 @@ tasks.test {
 kotlin {
     jvmToolchain(11)
 }
+
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "com.github.nejer6.MainKt"
+    }
+}
